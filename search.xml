@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>本地 Git 添加多个 Github 账号</title>
+      <link href="/2022/03/28/ben-di-git-tian-jia-duo-ge-github-zhang-hao/"/>
+      <url>/2022/03/28/ben-di-git-tian-jia-duo-ge-github-zhang-hao/</url>
+      
+        <content type="html"><![CDATA[<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>有两个 Github 账号分别为 aaa 和 bbb ，希望本地 Git 可以对两个账号作区分进行相关操作。</p><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ol><li>本机生成两套 ssh 密钥<pre class=" language-bash"><code class="language-bash">ssh-keygen -t rsa -f C:/Users/your_username/.ssh/key_for_aaa -C <span class="token string">"aaamail@example.com"</span><span class="token comment" spellcheck="true"># 给账号aaa的密钥，-f指定输出路径和文件名，-c指定关联邮箱</span>ssh-keygen -t rsa -f C:/Users/your_username/.ssh/key_for_bbb -C <span class="token string">"bbbmail@example.com"</span><span class="token comment" spellcheck="true"># 给账号bbb的密钥</span></code></pre></li><li>配置 C:/Users/your_username/.ssh/config 文件（没有则自己新建一个，注意没有后缀名）<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 账号aaa对应的配置</span>Host aaa.github.com HostName github.com User <span class="token function">git</span> IdentityFile C:/Users/your_username/.ssh/key_for_aaa <span class="token comment" spellcheck="true"># 对应密钥文件的路径</span></code></pre></li></ol><h1 id="账号bbb对应的配置"><a href="#账号bbb对应的配置" class="headerlink" title="账号bbb对应的配置"></a>账号bbb对应的配置</h1><p>Host bbb.github.com<br>    HostName github.com<br>    User git<br>    IdentityFile C:/Users/your_username/.ssh/key_for_bbb # 对应密钥文件的路径</p><pre><code>3. 本机添加 ssh 文件，在 C:/Users/your_username/.ssh 目录下执行以下命令即可```bashssh-agent bashssh-add -D # 清除缓存ssh-add key_for_aaassh-add key_for_bbbssh-add -l # 确认是否添加成功</code></pre><ol start="4"><li>Github账号设置中添加上述生成密钥所对应的公钥</li><li>测试是否连通<pre><code>ssh -T git@aaa.github.com# 提示 Hi aaa! .....ssh -T git@bbb.github.com# 提示 Hi bbb! .....</code></pre></li></ol>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CMU 15-213 Lab 0 总结</title>
       <link href="/2022/03/11/cmu-15-213-lab-0-zong-jie/"/>
       <url>/2022/03/11/cmu-15-213-lab-0-zong-jie/</url>

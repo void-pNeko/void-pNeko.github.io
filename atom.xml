@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://void-pNeko.github.io/"/>
-  <updated>2022-03-11T10:24:19.045Z</updated>
+  <updated>2022-03-28T13:27:03.883Z</updated>
   <id>https://void-pNeko.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>本地 Git 添加多个 Github 账号</title>
+    <link href="https://void-pNeko.github.io/2022/03/28/ben-di-git-tian-jia-duo-ge-github-zhang-hao/"/>
+    <id>https://void-pNeko.github.io/2022/03/28/ben-di-git-tian-jia-duo-ge-github-zhang-hao/</id>
+    <published>2022-03-28T13:14:00.000Z</published>
+    <updated>2022-03-28T13:27:03.883Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h1&gt;&lt;p&gt;有两个 Github 账号分别为 aaa 和 bbb ，希望本地 Git 可以对两个账号作区分进行相关操作。&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>CMU 15-213 Lab 0 总结</title>

@@ -4,14 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Core Java, Volume Ⅰ Notes, void* pNeko">
+    <meta name="keywords" content="本地 Git 添加多个 Github 账号, void* pNeko">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="Chapter 33.1 A Simple Java Program
-Java is case sensitivepublic class FirstSample{
-  //public: aaccess modifier
-  //ever">
+    <meta name="description" content="问题有两个 Github 账号分别为 aaa 和 bbb ，希望本地 Git 可以对两个账号作区分进行相关操作。
+解决
+本机生成两套 ssh 密钥ssh-keygen -t rsa -f C:/Users/your_username/.ss">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +18,7 @@ Java is case sensitivepublic class FirstSample{
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Core Java, Volume Ⅰ Notes | void* pNeko</title>
+    <title>本地 Git 添加多个 Github 账号 | void* pNeko</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -214,13 +213,13 @@ Java is case sensitivepublic class FirstSample{
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Core Java, Volume Ⅰ Notes
+                        本地 Git 添加多个 Github 账号
                     </div>
                 </div>
             </div>
@@ -342,7 +341,7 @@ Java is case sensitivepublic class FirstSample{
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-06
+                    2022-03-28
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -356,14 +355,14 @@ Java is case sensitivepublic class FirstSample{
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    656
+                    292
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    1 分
                 </div>
                 
                 
@@ -374,175 +373,35 @@ Java is case sensitivepublic class FirstSample{
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Chapter-3"><a href="#Chapter-3" class="headerlink" title="Chapter 3"></a>Chapter 3</h1><h2 id="3-1-A-Simple-Java-Program"><a href="#3-1-A-Simple-Java-Program" class="headerlink" title="3.1 A Simple Java Program"></a>3.1 A Simple Java Program</h2><ul>
-<li>Java is case sensitive<pre class=" language-Java"><code class="language-Java">public class FirstSample{
-  //public: aaccess modifier
-  //everything in a Java program must be inside a class
-  //must make the file name for this source code the same as the name of the **public** class
-  public static void main(String[] args){
-      // program starts with the code in this main method
-      // and the main method must be declared **public**
-      System.out.println("Hello, World!");
-      // using the `System.out` object and calling its `println` method
-      // `System.out.print` will print without a newline
-  }
-}</code></pre>
+                <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>有两个 Github 账号分别为 aaa 和 bbb ，希望本地 Git 可以对两个账号作区分进行相关操作。</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ol>
+<li>本机生成两套 ssh 密钥<pre class=" language-bash"><code class="language-bash">ssh-keygen -t rsa -f C:/Users/your_username/.ssh/key_for_aaa -C <span class="token string">"aaamail@example.com"</span>
+<span class="token comment" spellcheck="true"># 给账号aaa的密钥，-f指定输出路径和文件名，-c指定关联邮箱</span>
+ssh-keygen -t rsa -f C:/Users/your_username/.ssh/key_for_bbb -C <span class="token string">"bbbmail@example.com"</span>
+<span class="token comment" spellcheck="true"># 给账号bbb的密钥</span></code></pre>
 </li>
-<li><code>void main</code>  means that this method will not return an exit code. Use the <code>System.exit</code> method when needed.</li>
-<li>Java uses double quotes to delimit strings like C/C++</li>
-</ul>
-<h2 id="3-2-Comments"><a href="#3-2-Comments" class="headerlink" title="3.2 Comments"></a>3.2 Comments</h2><ul>
-<li>There are a kind of comments used to generate documentation automatically. Like this:<pre class=" language-Java"><code class="language-Java">/**
-* The first program
-* @author StreamAzure
-*/</code></pre>
+<li>配置 C:/Users/your_username/.ssh/config 文件（没有则自己新建一个，注意没有后缀名）<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 账号aaa对应的配置</span>
+Host aaa.github.com
+ HostName github.com
+ User <span class="token function">git</span>
+ IdentityFile C:/Users/your_username/.ssh/key_for_aaa <span class="token comment" spellcheck="true"># 对应密钥文件的路径</span>
+</code></pre>
 </li>
-</ul>
-<h2 id="3-3-Data-Types"><a href="#3-3-Data-Types" class="headerlink" title="3.3 Data Types"></a>3.3 Data Types</h2><h3 id="8-primitive-types"><a href="#8-primitive-types" class="headerlink" title="8 primitive types"></a>8 primitive types</h3><table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Storage Requirement</th>
-<th>Range</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>int</td>
-<td>4 bytes</td>
-<td>$-2^{31}$ to $2^{31}-1$</td>
-</tr>
-<tr>
-<td>short</td>
-<td>2 bytes</td>
-<td></td>
-</tr>
-<tr>
-<td>long</td>
-<td>8 bytes</td>
-<td></td>
-</tr>
-<tr>
-<td>byte</td>
-<td>1 byte</td>
-<td>$-128$ to $127$</td>
-</tr>
-<tr>
-<td>float</td>
-<td>4 bytes</td>
-<td></td>
-</tr>
-<tr>
-<td>double</td>
-<td>8 bytes</td>
-<td></td>
-</tr>
-<tr>
-<td>char</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>boolean</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<p>You cannot convert between integers and <code>boolean</code> values. Also, an integer expression <code>x = 0</code> will not be converted to a  <code>boolean</code> value.</p>
-<h3 id="suffix-and-prefix"><a href="#suffix-and-prefix" class="headerlink" title="suffix and prefix"></a>suffix and prefix</h3><table>
-<thead>
-<tr>
-<th>suffix/prefix</th>
-<th>meaning</th>
-<th>example</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>L or l</td>
-<td>long integer</td>
-<td><code>4000000000L</code></td>
-</tr>
-<tr>
-<td>0x</td>
-<td>Hexadecimal</td>
-<td><code>0xCAFE</code></td>
-</tr>
-<tr>
-<td>0</td>
-<td>Octal</td>
-<td><code>010</code> (8)</td>
-</tr>
-<tr>
-<td>0b</td>
-<td>binary</td>
-<td><code>0b1001</code> (9)</td>
-</tr>
-<tr>
-<td>F or f</td>
-<td>float</td>
-<td><code>3.14F</code></td>
-</tr>
-<tr>
-<td>E or e</td>
-<td>a decimal exponent</td>
-<td><code>1.729E3</code> (1729)</td>
-</tr>
-</tbody></table>
-<p>Floating-point numbers without an <code>F</code> suffix will be considered to be of type <code>double</code>.</p>
-<h2 id="3-4-Variables-and-Constants"><a href="#3-4-Variables-and-Constants" class="headerlink" title="3.4 Variables and Constants"></a>3.4 Variables and Constants</h2><h3 id="Variables"><a href="#Variables" class="headerlink" title="Variables"></a>Variables</h3><p>A variable must be declared and then be initialized.<br>You can do this:</p>
-<pre class=" language-Java"><code class="language-Java">int days = 12; //both declare and initialize</code></pre>
-<p>But with Java 10, it can be:</p>
-<pre class=" language-Java"><code class="language-Java">var days = 12; //initialize the local variable without declare its type</code></pre>
-<p>Unlike C/C++, Java  does not distinguish between declarations and definitions.</p>
-<h3 id="Constants"><a href="#Constants" class="headerlink" title="Constants"></a>Constants</h3><p>The keyword <code>final</code> denotes a constant.</p>
-<pre class=" language-Java"><code class="language-Java">final double PI = 3.14;</code></pre>
-<p>Set up a class constant, so that it can be available to multiple methods inside a single class.</p>
-<pre class=" language-Java"><code class="language-Java">public class Constants{
-    public static final double PI = 3.14;
-    public static void main(String[] args){
-        ...
-    }
-}</code></pre>
-<p>Since it is declared with <code>public</code>, methods of other classes can also use it, like <code>Constants.PI</code><br>Besides, <code>const</code> is a reserved keyword but not currently used.</p>
-<h3 id="Enumerated"><a href="#Enumerated" class="headerlink" title="Enumerated"></a>Enumerated</h3><p>Define you own enumerated type:</p>
-<pre class=" language-Java"><code class="language-Java">enum Size {SMALL, MEDIUM, LARGE, EXTRA_LARGE};</code></pre>
-<p>Declare variables of this type:</p>
-<pre><code>Size s = Size.MEDIUM;</code></pre><h2 id="3-5-Operators"><a href="#3-5-Operators" class="headerlink" title="3.5 Operators"></a>3.5 Operators</h2><p><strong>Integer division by 0</strong> raises an <strong>exception,</strong> whereas <strong>floating-point division by 0</strong> causes an <strong>infinite</strong> or <strong>NaN</strong> result.<br>Some mathematical functions and constants:</p>
-<pre class=" language-Java"><code class="language-Java">double y = Math.sqrt(x);
-double y = Math.pow(x, a);
-Math.PI
-Math.E</code></pre>
-<p>With importting the Math package, you can avoid the <code>Math</code> prefix:</p>
-<pre class=" language-Java"><code class="language-Java">import static java.lang.Math.*;</code></pre>
-<p><strong>Conversions between Numeric Types</strong><br><img src="980D243FFE7EA25F6D7087DB2D7DD3DC.png" alt><br>Dotted arrows means the conversions may lose precision while solid arrows means not.<br>When two values are combined with a binary operator, the conversion priority will be: <code>double</code> → <code>float</code> → <code>long</code> →<code>int</code></p>
-<p><strong>Casts</strong><br>The conversions in which loss of information can be done by casts.<br>For example:</p>
-<pre class=" language-Java"><code class="language-Java">double x = 9.997;
-int nx = (int) Math.round(x);
-// nx = 10.</code></pre>
-<p><strong>Switch Expressions</strong><br>When you need to choose among more than two values, use the <code>switch</code> expression (Java 14).</p>
-<pre class=" language-Java"><code class="language-Java">String seasonName = switch (seasonCode){
-    case 0 -> "Spring";
-    case 1 -> "Summer";
-    case 2 -> "Fall";
-    case 3 -> "Winter";
-    default -> "???";
-};</code></pre>
-<h2 id="3-6-Strings"><a href="#3-6-Strings" class="headerlink" title="3.6 Strings"></a>3.6 Strings</h2><p><strong>Substrings</strong></p>
-<pre class=" language-Java"><code class="language-Java">String greeting = "hello";
-String s = greeting.substring(0, 3);
-// s = "hel"</code></pre>
-<p><strong>Every Java object can be converted to  a string.</strong></p>
-<pre class=" language-Java"><code class="language-Java">int age = 13;
-String rating = "PG" + age;
-// rating = "PG13"</code></pre>
-<p>Use the <code>join</code> method when you put multiple strings together with separations among them:</p>
-<pre class=" language-Java"><code class="language-Java">String all = String.join("/","S","M","L","XL");
-// the first parameter is the separation
-// all = "S/M/L/XL"</code></pre>
-<p><strong>String Are Immutable</strong><br>For example, turn <code>hello</code> into <code>help</code>:</p>
-<pre class=" language-Java"><code class="language-Java">String greeting = "hello";
-greeting = greeting.substring(0, 3) + "p";
-// greeting = "help"</code></pre>
-<p>You can not change the individual characters in a Java string. It can be roughly considered as a <code>char*</code> pointer in C.</p>
+</ol>
+<h1 id="账号bbb对应的配置"><a href="#账号bbb对应的配置" class="headerlink" title="账号bbb对应的配置"></a>账号bbb对应的配置</h1><p>Host bbb.github.com<br>    HostName github.com<br>    User git<br>    IdentityFile C:/Users/your_username/.ssh/key_for_bbb # 对应密钥文件的路径</p>
+<pre><code>3. 本机添加 ssh 文件，在 C:/Users/your_username/.ssh 目录下执行以下命令即可
+```bash
+ssh-agent bash
+ssh-add -D # 清除缓存
+ssh-add key_for_aaa
+ssh-add key_for_bbb
+ssh-add -l # 确认是否添加成功</code></pre><ol start="4">
+<li>Github账号设置中添加上述生成密钥所对应的公钥</li>
+<li>测试是否连通<pre><code>ssh -T git@aaa.github.com
+# 提示 Hi aaa! .....
+ssh -T git@bbb.github.com
+# 提示 Hi bbb! .....</code></pre></li>
+</ol>
 
             </div>
             <hr />
@@ -580,9 +439,47 @@ greeting = greeting.substring(0, 3) + "p";
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2022/03/28/ben-di-git-tian-jia-duo-ge-github-zhang-hao/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="本地 Git 添加多个 Github 账号">
+                        
+                        <span class="card-title">本地 Git 添加多个 Github 账号</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            问题有两个 Github 账号分别为 aaa 和 bbb ，希望本地 Git 可以对两个账号作区分进行相关操作。
+解决
+本机生成两套 ssh 密钥ssh-keygen -t rsa -f C:/Users/your_username/.ss
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2022-03-28
+                            </span>
+                        <span class="publish-author">
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2022/03/11/cmu-15-213-lab-0-zong-jie/">
                     <div class="card-image">
@@ -607,48 +504,8 @@ typedef struct list_ele {
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2022-03-11
-                        </span>
-                        <span class="publish-author">
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/03/06/leetcode-zong-jie/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="LeetCode 总结">
-                        
-                        <span class="card-title">LeetCode 总结</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            常用库函数
-int / double / long / float转 string：std:to_string(a)（C++11）
-
-常见解法
-数组以下标k为界前后段对调：整体翻转，k前后两段再翻转
-
-二分题解6017. 向数组中追加 K 
-                        
-                    </div>
-                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2022-03-06
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2022-03-11
                             </span>
                         <span class="publish-author">
                             
