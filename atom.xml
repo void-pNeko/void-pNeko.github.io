@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>void* pNeko</title>
+  
+  <subtitle>void* pNeko</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://void-pNeko.github.io/"/>
+  <updated>2022-03-11T10:24:19.045Z</updated>
+  <id>https://void-pNeko.github.io/</id>
+  
+  <author>
+    <name>void-pNeko</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CMU 15-213 Lab 0 总结</title>
+    <link href="https://void-pNeko.github.io/2022/03/11/cmu-15-213-lab-0-zong-jie/"/>
+    <id>https://void-pNeko.github.io/2022/03/11/cmu-15-213-lab-0-zong-jie/</id>
+    <published>2022-03-11T10:06:51.000Z</published>
+    <updated>2022-03-11T10:24:19.045Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;几个点没搞清楚所以做了一个下午&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;像下面这样的结构体：&lt;/p&gt;
+&lt;pre class=&quot; language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Core Java, Volume Ⅰ Notes</title>
+    <link href="https://void-pNeko.github.io/2022/03/06/core-java-volume-i-notes/"/>
+    <id>https://void-pNeko.github.io/2022/03/06/core-java-volume-i-notes/</id>
+    <published>2022-03-06T06:16:33.000Z</published>
+    <updated>2022-03-06T11:04:32.326Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Chapter-3&quot;&gt;&lt;a href=&quot;#Chapter-3&quot; class=&quot;headerlink&quot; title=&quot;Chapter 3&quot;&gt;&lt;/a&gt;Chapter 3&lt;/h1&gt;&lt;h2 id=&quot;3-1-A-Simple-Java-Program&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode 总结</title>
+    <link href="https://void-pNeko.github.io/2022/03/06/leetcode-zong-jie/"/>
+    <id>https://void-pNeko.github.io/2022/03/06/leetcode-zong-jie/</id>
+    <published>2022-03-06T05:10:15.000Z</published>
+    <updated>2022-03-06T10:35:27.842Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;常用库函数&quot;&gt;&lt;a href=&quot;#常用库函数&quot; class=&quot;headerlink&quot; title=&quot;常用库函数&quot;&gt;&lt;/a&gt;常用库函数&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;int&lt;/code&gt; / &lt;code&gt;double&lt;/code&gt; /
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
